@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import Game from './Game'
+import {useState, useEffect} from 'react'
+
+
 
 function App() {
+
+  const [sequence, setSequence] = useState("") 
+  
+  
+  useEffect(() => {
+    fetch('https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new')
+    .then(resp=>resp.text())
+    .then(numbers => {
+      const numbersArray = numbers.split("\n")
+      numbersArray.pop();
+      setSequence(numbersArray)
+      })
+  },[])
+
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="numbers">
+      <h1>Mastermind</h1>
+      <Game sequence={sequence} />
+    </div> 
   );
 }
 
 export default App;
+

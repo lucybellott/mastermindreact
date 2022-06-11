@@ -1,0 +1,20 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "username": "Alice",
+      "trials": 9
+    },
+    {
+      "id": 2,
+      "username": "Brandon",
+      "trials": 7
+      
+    },
+    {
+      "id": 3,
+      "username": "Carol",
+      "trials": 5
+    }
+  ]
+}
