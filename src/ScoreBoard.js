@@ -58,7 +58,7 @@ export default function ScoreBoard({win, trialCounter}) {
     const displayWinner = (newWinner) => {
 
          let winnerArray = [...boardData, newWinner]
-           console.log(winnerArray)
+           //console.log(winnerArray)
             if (winnerArray.length > 10 ) {
                 
                 winnerArray.sort((a, b) => (a.trials > b.trials) ? 1 : -1)
@@ -101,7 +101,7 @@ export default function ScoreBoard({win, trialCounter}) {
                   })
     }
     
-    console.log(betterScore())
+    //console.log(betterScore())
     return (
       <div>
 
