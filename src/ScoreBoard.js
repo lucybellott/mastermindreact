@@ -12,14 +12,18 @@ export default function ScoreBoard({win, trialCounter}) {
     fetch('http://localhost:3000/games')
     .then(resp => resp.json())
     .then(data => {
+        
         setBoardData(data)
      })
     }, [])
 
 
- 
+    let sortedData = boardData.sort((a, b) => (a.trials > b.trials) ? 1 : -1)
+    
 //Render sorted winners data from backend
- const boardInfo = boardData.map(item => {
+ const boardInfo = sortedData.map(item => {
+
+  //  console.log(item.trials)
         return <>
             
             <tr key={item.id}>
@@ -48,13 +52,13 @@ export default function ScoreBoard({win, trialCounter}) {
         }  
       
     }
-
+//console.log(pastTrials.length)
   
     //Replacing the last place on the board with new winner with that has a better score
     const displayWinner = (newWinner) => {
 
          let winnerArray = [...boardData, newWinner]
-           
+           console.log(winnerArray)
             if (winnerArray.length > 10 ) {
                 
                 winnerArray.sort((a, b) => (a.trials > b.trials) ? 1 : -1)
@@ -66,7 +70,7 @@ export default function ScoreBoard({win, trialCounter}) {
                 winnerArray.sort((a, b) => (a.trials > b.trials) ? 1 : -1)
             }
     
-            return setBoardData(winnerArray)
+           setBoardData(winnerArray)
     }
 
     
@@ -97,11 +101,11 @@ export default function ScoreBoard({win, trialCounter}) {
                   })
     }
     
-    
+    console.log(betterScore())
     return (
       <div>
 
-        <h4> 🏁 Top 10 Wall of Champions 🏁</h4>
+        <h4> 🏁 Wall of Champions 🏁</h4>
         <br/>
 
             {win === true && betterScore() === true ?
@@ -117,8 +121,8 @@ export default function ScoreBoard({win, trialCounter}) {
             
             : null
             }
-           <br/>
-        <p id="message">Your number of trials must be lower than existing ones to enter the board</p> 
+           
+        {/* <p id="message">Your number of trials must be lower than existing ones to enter the board</p>  */}
 
         <table>
           <tbody id="score-board">

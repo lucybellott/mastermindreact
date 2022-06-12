@@ -14,17 +14,6 @@ export default function Game({sequence}) {
         fourth: "0"
       })
 
-      
-      const [newInputs, setNewInputs] = useState([0,0,0,0])
-
-    //   let inputArray = newInputs.map((newinput) => {
-    //     return <div>
-    //         <input type="number" onChange={handleChange}></input>
-    //     </div>
-    //   })
-
-    //   const handleNewInput = () =>
-
 
 
 
@@ -47,7 +36,7 @@ export default function Game({sequence}) {
        
         //number entered can't be higher than 7
         if (e.target.value >= 0 && e.target.value <= 7) { 
-             setNewInputs( inputData )
+             setInputData( { ...inputData, [e.target.name]: e.target.value })
     }}
     
     let i;
@@ -120,7 +109,7 @@ export default function Game({sequence}) {
 
      }
 
-        //console.log(playerGuess)
+      
 
        
                 

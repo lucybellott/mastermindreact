@@ -9,12 +9,46 @@
       "id": 2,
       "username": "Brandon",
       "trials": 7
-      
     },
     {
       "id": 3,
       "username": "Carol",
       "trials": 5
+    },
+    {
+      "username": "Lucy",
+      "trials": 3,
+      "id": 4
+    },
+    {
+      "username": "Mark",
+      "trials": 7,
+      "id": 5
+    },
+    {
+      "username": "Pedro",
+      "trials": 8,
+      "id": 6
+    },
+    {
+      "username": "Ana",
+      "trials": 4,
+      "id": 7
+    },
+    {
+      "username": "John",
+      "trials": 3,
+      "id": 8
+    },
+    {
+      "username": "Katie",
+      "trials": 5,
+      "id": 9
+    },
+    {
+      "username": "Jose",
+      "trials": 9,
+      "id": 10
     }
   ]
 }
