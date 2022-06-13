@@ -164,8 +164,8 @@ export default function Game({sequence}) {
                         : <h5>❌ You're out of guesses ❌</h5>
                 }
             </div>
-            <hr/>
-            <ScoreBoard win={win} trialCounter={trialCounter}/>
+            {/* <hr/>
+            <ScoreBoard win={win} trialCounter={trialCounter}/> */}
          </div>
         
      
