@@ -9,7 +9,7 @@ export default function Game({sequence}) {
     //Setting state for guess inputs
     const [inputData, setInputData] = useState({
         first: "0",
-        second: "2",
+        second: "0",
         third: "0",
         fourth: "0"
       })
