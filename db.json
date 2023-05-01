@@ -44,6 +44,26 @@
       "username": "Katie",
       "trials": 5,
       "id": 8
+    },
+    {
+      "username": "tess",
+      "trials": 1,
+      "id": 9
+    },
+    {
+      "username": "Kate",
+      "trials": 1,
+      "id": 10
+    },
+    {
+      "username": "Jessie",
+      "trials": 3,
+      "id": 11
+    },
+    {
+      "username": "test",
+      "trials": 2,
+      "id": 12
     }
   ]
 }

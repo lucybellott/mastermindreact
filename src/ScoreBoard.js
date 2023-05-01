@@ -9,7 +9,7 @@ export default function ScoreBoard({win, trialCounter}) {
 
   //GET request from backend
   useEffect(() => {
-    fetch('http://192.168.1.223/games')
+    fetch('http://localhost:3000/games')
     .then(resp => resp.json())
     .then(data => {
         
@@ -23,7 +23,6 @@ export default function ScoreBoard({win, trialCounter}) {
 //Render sorted winners data from backend
  const boardInfo = sortedData.map(item => {
 
-  //  console.log(item.trials)
         return <>
             
             <tr key={item.id}>
@@ -100,8 +99,9 @@ export default function ScoreBoard({win, trialCounter}) {
                     console.log(error)
                   })
     }
+  
     
-    //console.log(betterScore())
+    console.log(boardInfo)
     return (
       <div>
 
