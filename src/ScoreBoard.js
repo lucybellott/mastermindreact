@@ -14,6 +14,7 @@ export default function ScoreBoard({win, trialCounter}) {
     .then(data => {
         
         setBoardData(data)
+        console.log(data)
      })
     }, [])
 
