@@ -102,7 +102,7 @@ export default function ScoreBoard({win, trialCounter}) {
     }
   
     
-    console.log(boardInfo)
+   // console.log(boardInfo)
     return (
       <div>
 

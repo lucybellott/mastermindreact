@@ -8,6 +8,7 @@ import {useState, useEffect} from 'react'
 function App() {
 
   const [sequence, setSequence] = useState("") 
+  const [easy, setEasy] = useState("")
   
   
   useEffect(() => {
