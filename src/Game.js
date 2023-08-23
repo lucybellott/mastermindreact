@@ -51,9 +51,9 @@ export default function Game({sequence}) {
     //          setInputData( { ...inputData, [e.target.name]: e.target.value })
     // }}
     
-    let i;
-    let rightNumberAndIndexCount = 0;
-    let wrongIndexCount = 0;
+    // let i;
+    // let rightNumberAndIndexCount = 0;
+    // let wrongIndexCount = 0;
    
    ////onClick logic of Guess button
     //  function handleGuess() {
@@ -136,10 +136,11 @@ export default function Game({sequence}) {
         } 
         
         else {
-          let rightNumberAndIndexCount = 0;
-          let wrongIndexCount = 0;
-          let rightNumberAndIndex = "";
-          let wrongIndex = "";
+          let rightNumberAndIndexCount = 0
+          let wrongIndexCount = 0
+          let rightNumberAndIndex = ""
+          let wrongIndex = ""
+          let allWrongGuess =""
           setTurns(() => turns -1)
           setTrialCounter(() => trialCounter +1)
 
@@ -168,20 +169,26 @@ export default function Game({sequence}) {
           if (wrongIndexCount > 0) {
             wrongIndex = `${wrongIndexCount} right number(s) in the wrong position(s)`;
           }
+              //No correct numbers guessed
+          if(rightNumberAndIndex === "" && wrongIndex ==="" ){
+            allWrongGuess = "No correct numbers guessed"
+          } 
+      
       
           // Data to display feedback
           const data = {
             correctAnswer: rightNumberAndIndex,
             guessedSequence: playerGuess,
             wrongPosition: wrongIndex,
+            wrongGuess: allWrongGuess
           };
       
-         // setTurns((prevTurns) => prevTurns - 1);
-         // setTrialCounter((prevTrialCounter) => prevTrialCounter + 1);
+        
           
           if (rightNumberAndIndexCount === sequence.length) {
             setWin(true);
           }
+
       
           setLogData([...logData, data]);
         }

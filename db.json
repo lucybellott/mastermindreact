@@ -46,11 +46,6 @@
       "id": 8
     },
     {
-      "username": "tess",
-      "trials": 1,
-      "id": 9
-    },
-    {
       "username": "Kate",
       "trials": 1,
       "id": 10
@@ -61,8 +56,8 @@
       "id": 11
     },
     {
-      "username": "test",
-      "trials": 2,
+      "username": "Matthew",
+      "trials": 4,
       "id": 12
     }
   ]
