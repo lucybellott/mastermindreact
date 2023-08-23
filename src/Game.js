@@ -292,6 +292,8 @@ export default function Game({sequence}) {
                   className="number-input"
                 />
               ))}
+              <br/>
+              <br/>
             </div>
       
             {turns > 0 && !win ? (
@@ -321,8 +323,8 @@ export default function Game({sequence}) {
             )}
           </div>
       
-          <hr />
-          <ScoreBoard win={win} trialCounter={trialCounter} />
+          {/* <hr /> */}
+          {/* <ScoreBoard win={win} trialCounter={trialCounter} /> */}
         </div>
       );
       
