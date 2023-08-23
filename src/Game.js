@@ -319,7 +319,7 @@ export default function Game({sequence}) {
                 ))}
               </div>
             ) : (
-              <h5>{win ? "👏👏 You win!!! 👏👏" : "❌ You're out of guesses ❌"}</h5>
+              <h5>{win ? "YOU WIN!" : "❌ You're out of guesses ❌"}</h5>
             )}
           </div>
               {/* hide score board to deploy later */}
