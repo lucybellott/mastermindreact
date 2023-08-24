@@ -8,8 +8,8 @@ export default function HiddenCode({sequence, win}) {
         <div> 
             
             <div style={{marginTop:"20px"}}>
-                <em>Can you break the hidden code?</em>
-                <br/>
+                <h5>Can you break the code?</h5>
+                
                 <br/>
                 { win === true ? 
                 <div>
