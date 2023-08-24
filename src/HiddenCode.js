@@ -16,7 +16,7 @@ export default function HiddenCode({sequence, win}) {
                     <p>🔑 🔑 🔑 🔑</p> 
                     <br/>
                     <h5>CONGRATS</h5>
-                    <img src="https://upload.wikimedia.org/wikipedia/en/8/86/Einstein_tongue.jpg"></img>
+                    <img alt="Einstein" src="https://upload.wikimedia.org/wikipedia/en/8/86/Einstein_tongue.jpg"/>
                     <br/>
                     <br/>
                 </div>
