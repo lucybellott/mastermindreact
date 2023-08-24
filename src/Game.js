@@ -1,6 +1,6 @@
 import React from 'react'
 import HiddenCode from './HiddenCode'
-import ScoreBoard from './ScoreBoard'
+// import ScoreBoard from './ScoreBoard'
 import {useState, useEffect} from 'react'
 
 
