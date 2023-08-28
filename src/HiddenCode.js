@@ -13,7 +13,7 @@ export default function HiddenCode({sequence, win}) {
                 <br/>
                 { win === true ? 
                 <div>
-                    {/* <p>🔑 🔑 🔑 🔑</p>  */}
+                    
                     <br/>
                     <h5>CONGRATS</h5>
                     <img alt="winner" id="winner" src="https://www.netcov.com/wp-content/pubfiles/2022/07/shutterstock_1092829541.jpg"/>
@@ -22,7 +22,7 @@ export default function HiddenCode({sequence, win}) {
                 </div>
                : 
                 <div>
-                    {/* <p>🔒 🔒 🔒 🔒</p> */}
+                   
                     <img id="lock-img" alt="lock" src="https://cybersafe.news/wp-content/uploads/2018/10/cyber-security-tool-1600x800.jpeg"/>
                     <br/>
                     <br/>
