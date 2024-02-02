@@ -29,6 +29,7 @@ export default function Game({ sequence }) {
       // Initialize counts and messages
       let rightNumberAndIndexCount = 0
       let wrongIndexCount = 0
+     
       let rightNumberAndIndex = ''
       let wrongIndex = ''
       let allWrongGuess = ''
@@ -86,7 +87,7 @@ export default function Game({ sequence }) {
       <div>
         {!win && ( // Render input fields only if the player hasn't won
           <>
-            {Array.from(sequence).map((number, index) => (
+            {sequence.map((number, index) => (
               <input
                 key={index}
                 type="text"

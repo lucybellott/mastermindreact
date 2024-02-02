@@ -7,14 +7,11 @@ import {useState, useEffect} from 'react'
 
 function App() {
 
-  const [sequence, setSequence] = useState("") 
+  const [sequence, setSequence] = useState([]) 
   const [selectedMode, setSelectedMode] = useState("easy")
   
 
-   
- 
-       
-  
+
   
   useEffect(() => {
     fetch('https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new')
