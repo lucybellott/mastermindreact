@@ -3,14 +3,15 @@ import React, { useState, useEffect } from 'react';
 import HiddenCode from './HiddenCode';
 // import ScoreBoard from './ScoreBoard'
 
-export default function Game({ sequence }) {
+export default function Game({ sequence, fetchSequence }) {
   // State to store the player's input data (guesses)
   const [inputData, setInputData] = useState([])
-  const [turns, setTurns] = useState(10)
+  const [turns, setTurns] = useState(10) //track remaining attempts
   const [win, setWin] = useState(false) // State to track if the player wins
-  const [logData, setLogData] = useState([])
+  const [logData, setLogData] = useState([]) //store the history of guesses
   const [trialCounter, setTrialCounter] = useState(0)
 
+  //Function to generate inputs dynamically
   useEffect(() => {
     // Initialize the input data based on the sequence length
     const initialInputs = Array.from({ length: sequence.length }, () => '');
@@ -18,7 +19,9 @@ export default function Game({ sequence }) {
   }, [sequence])
 
   // Function to handle the player's guess
+  // it checks for duplicate guesses, updates trial counts and turns left, generates feedback messages
   const handleGuess = () => {
+    
     const compare = logData.find((i) => {
       return inputData.toString() === i.guessedSequence.toString();
     })
@@ -29,7 +32,6 @@ export default function Game({ sequence }) {
       // Initialize counts and messages
       let rightNumberAndIndexCount = 0
       let wrongIndexCount = 0
-     
       let rightNumberAndIndex = ''
       let wrongIndex = ''
       let allWrongGuess = ''
@@ -45,7 +47,7 @@ export default function Game({ sequence }) {
         }
       }
 
-      // Generate feedback messages
+      // feedback messages
       if (rightNumberAndIndexCount > 0) {
         rightNumberAndIndex = `${rightNumberAndIndexCount} right number(s) in the right position(s)`;
       }
@@ -56,6 +58,7 @@ export default function Game({ sequence }) {
         allWrongGuess = 'No correct numbers guessed';
       }
 
+      //Obj to store info data of past trials
       const data = {
         correctAnswer: rightNumberAndIndex,
         guessedSequence: inputData,
@@ -67,8 +70,26 @@ export default function Game({ sequence }) {
         setWin(true);
       }
 
+      //new code
+      if (turns === 0) {
+        setWin(false);
+      }
+
       setLogData([...logData, data])
     }
+  };
+
+
+  const handlePlayAgain = () => {
+    // Reset all state variables to restart the game
+    //need to fetch new sequence after losing
+    setInputData(Array.from({ length: sequence.length }, () => ''));
+    setTurns(10);
+    setWin(false);
+    setLogData([]);
+    setTrialCounter(0);
+
+    fetchSequence()
   };
 
   // Function to handle input changes
@@ -113,6 +134,8 @@ export default function Game({ sequence }) {
 
             <hr />
 
+     
+
             {logData.map((item, index) => (
               <div key={index}>
                 <p>You guessed {item.guessedSequence.join(', ')}.</p>
@@ -125,10 +148,28 @@ export default function Game({ sequence }) {
             ))}
           </div>
         ) : (
-         <h5> {win ? "YOU'VE CRACKED THE CODE!"
+          <div>
+          {win ? (
+          <>
+          <h5> YOU'VE CRACKED THE CODE! </h5>
+          <br/>
+          <button type="button" className="btn btn-success" onClick={handlePlayAgain}>
+            Play Again
+          </button>
+          </>
+          )
           
-          : '❌ You\'re out of guesses ❌'}</h5>
+          : 
+          <>
+          <h5>❌ You're out of guesses ❌</h5>
+          <br/>
+          <button type="button" className="btn btn-success" onClick={handlePlayAgain}>
+            Play Again
+          </button>
+          </>}
+        </div>
         )}
+        
       </div>
     </div>
   );
