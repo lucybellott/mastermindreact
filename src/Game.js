@@ -163,7 +163,7 @@ export default function Game({ sequence, fetchSequence }) {
           <>
           <h5>❌ You're out of guesses ❌</h5>
           <br/>
-          <button type="button"  onClick={handlePlayAgain}>
+          <button type="button" className="btn btn-success" onClick={handlePlayAgain}>
             Play Again
           </button>
           </>}
